@@ -1,32 +1,31 @@
-# 🚀 Xderm Limiter for OpenWrt
+# 🚀 Xderm Limiter Pro Edition
 
 [![Status](https://img.shields.io/badge/Status-Stable-green.svg)]()
 [![Platform](https://img.shields.io/badge/Platform-OpenWrt-blue.svg)]()
 [![Engine](https://img.shields.io/badge/Engine-Traffic%20Control-orange.svg)]()
 
-**Xderm Limiter** adalah alat manajemen bandwidth otomatis untuk OpenWrt yang dirancang untuk membatasi kecepatan internet klien secara dinamis. Menggunakan engine `tc` (Traffic Control), alat ini sangat efektif untuk menjaga stabilitas jaringan dari pengguna yang rakus bandwidth.
+**Xderm Limiter** adalah alat manajemen bandwidth otomatis untuk OpenWrt yang menggunakan engine `tc` (Traffic Control). Alat ini membantu membatasi kecepatan internet klien secara dinamis untuk mencegah "bandwidth hogging".
 
 ---
 
 ## ✨ Fitur Utama
-* **Auto Limit Client**: Mendeteksi perangkat yang terhubung dan menerapkan limit secara otomatis.
-* **Integrated LuCI Dashboard**: Terintegrasi langsung dengan antarmuka web OpenWrt (Menu Services).
-* **IP Exception**: Fitur untuk mengecualikan perangkat tertentu agar tidak terkena limitasi.
-* **Real-time Engine**: Menggunakan `screen` agar proses limit berjalan di latar belakang tanpa memutus sesi SSH.
-* **Custom Speed**: Pengaturan kecepatan (Mbps) yang bisa diubah kapan saja melalui dashboard PHP.
+* **Auto Limit**: Otomatis membatasi setiap klien yang terhubung ke WiFi/LAN.
+* **Integrated LuCI**: Akses pengaturan langsung lewat menu Services di OpenWrt.
+* **IP Exception**: Kecualikan IP tertentu (seperti IP Admin) dari pembatasan.
+* **Background Process**: Engine berjalan di latar belakang menggunakan `screen`.
 
 ---
 
-## 📸 Cara Kerja Sistem
+## 📸 Cara Kerja Teknis
 
 
-Sistem bekerja dengan memantau tabel DHCP di `/tmp/dhcp.leases`. Setiap kali klien aktif terdeteksi, skrip `limit` akan membuatkan jalur khusus (class) pada antarmuka `br-lan` menggunakan algoritma **HTB (Hierarchical Token Bucket)**.
+Sistem memantau perangkat yang aktif melalui tabel DHCP dan menerapkan aturan **HTB (Hierarchical Token Bucket)** pada antarmuka jaringan router untuk memastikan pembagian bandwidth yang adil.
 
 ---
 
-## 📥 Instalasi Cepat
+## 📥 Instalasi Satu Baris
 
-Cukup salin dan tempel perintah berikut di terminal SSH Anda:
+Buka terminal SSH Anda dan jalankan perintah berikut:
 
 ```bash
 wget -qO- [https://raw.githubusercontent.com/username-anda/repo-anda/main/install-xderm.sh](https://raw.githubusercontent.com/username-anda/repo-anda/main/install-xderm.sh) | sh
