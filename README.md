@@ -28,4 +28,4 @@ Sistem memantau perangkat yang aktif melalui tabel DHCP dan menerapkan aturan **
 Buka terminal SSH Anda (Putty/Termius) dan jalankan perintah berikut:
 
 ```bash
-wget -qO- [https://raw.githubusercontent.com/roisulx-coder/xdermlimiter/main/install-xderm.sh](https://raw.githubusercontent.com/roisulx-coder/xdermlimiter/main/install-xderm.sh) | sh
+wget -qO- https://raw.githubusercontent.com/roisulx-coder/xdermlimiter/main/install-xderm.sh | sh
