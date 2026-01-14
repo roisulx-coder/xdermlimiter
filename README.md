@@ -1,10 +1,10 @@
-# 🚀 Xderm Limiter Pro Edition
+# 🚀 Xderm Limiter - Auto Bandwidth Manager
 
 [![Status](https://img.shields.io/badge/Status-Stable-green.svg)]()
 [![Platform](https://img.shields.io/badge/Platform-OpenWrt-blue.svg)]()
 [![Engine](https://img.shields.io/badge/Engine-Traffic%20Control-orange.svg)]()
 
-**Xderm Limiter** adalah alat manajemen bandwidth otomatis untuk OpenWrt yang menggunakan engine `tc` (Traffic Control). Alat ini membantu membatasi kecepatan internet klien secara dinamis untuk mencegah "bandwidth hogging".
+**Xderm Limiter** adalah alat manajemen bandwidth otomatis untuk OpenWrt yang menggunakan engine `tc` (Traffic Control). Alat ini membantu membatasi kecepatan internet klien secara dinamis untuk mencegah penggunaan bandwidth berlebih oleh satu perangkat.
 
 ---
 
@@ -25,7 +25,7 @@ Sistem memantau perangkat yang aktif melalui tabel DHCP dan menerapkan aturan **
 
 ## 📥 Instalasi Satu Baris
 
-Buka terminal SSH Anda dan jalankan perintah berikut:
+Buka terminal SSH Anda (Putty/Termius) dan jalankan perintah berikut:
 
 ```bash
-wget -qO- [https://raw.githubusercontent.com/username-anda/repo-anda/main/install-xderm.sh](https://raw.githubusercontent.com/username-anda/repo-anda/main/install-xderm.sh) | sh
+wget -qO- [https://raw.githubusercontent.com/roisulx-coder/xdermlimiter/main/install-xderm.sh](https://raw.githubusercontent.com/roisulx-coder/xdermlimiter/main/install-xderm.sh) | sh
