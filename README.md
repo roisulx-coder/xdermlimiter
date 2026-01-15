@@ -1,31 +1,33 @@
-# 🚀 Xderm Limiter - Auto Bandwidth Manager
+# 🚀 Xderm Limiter - Auto Installer
 
-[![Status](https://img.shields.io/badge/Status-Stable-green.svg)]()
-[![Platform](https://img.shields.io/badge/Platform-OpenWrt-blue.svg)]()
-[![Engine](https://img.shields.io/badge/Engine-Traffic%20Control-orange.svg)]()
+[![OpenWrt Support](https://img.shields.io/badge/OpenWrt-21.02%20%7C%2022.03%20%7C%2023.05-blue?logo=openwrt)](https://openwrt.org)
+[![PHP Version](https://img.shields.io/badge/PHP-7.4%20%7C%208.x-777bb4?logo=php)](https://www.php.net)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**Xderm Limiter** adalah alat manajemen bandwidth otomatis untuk OpenWrt yang menggunakan engine `tc` (Traffic Control). Alat ini membantu membatasi kecepatan internet klien secara dinamis untuk mencegah penggunaan bandwidth berlebih oleh satu perangkat.
+**Xderm Limiter** adalah alat manajemen *bandwidth* otomatis berbasis web untuk router OpenWrt. Dirancang untuk membatasi kecepatan internet klien secara adil menggunakan `TC` (Traffic Control) dengan antarmuka PHP yang ringan.
 
 ---
 
 ## ✨ Fitur Utama
-* **Auto Limit**: Otomatis membatasi setiap klien yang terhubung ke WiFi/LAN.
-* **Integrated LuCI**: Akses pengaturan langsung lewat menu Services di OpenWrt.
-* **IP Exception**: Kecualikan IP tertentu (seperti IP Admin) dari pembatasan.
-* **Background Process**: Engine berjalan di latar belakang menggunakan `screen`.
+- 🛠 **Auto-Config PHP:** Memperbaiki masalah *Bad Gateway* secara otomatis pada `uhttpd`.
+- ⚡ **Dual Engine:** Mendukung PHP7 dan PHP8 secara mulus.
+- 📊 **Real-time Logging:** Pantau klien yang terbatasi langsung dari dashboard.
+- 🛡 **Smart Limit:** Menggunakan antrian HTB (Hierarchical Token Bucket) untuk efisiensi tinggi.
+- 🖥 **LuCI Integration:** Terintegrasi langsung dalam menu *Services* OpenWrt.
 
 ---
 
-## 📸 Cara Kerja Teknis
-
-
-Sistem memantau perangkat yang aktif melalui tabel DHCP dan menerapkan aturan **HTB (Hierarchical Token Bucket)** pada antarmuka jaringan router untuk memastikan pembagian bandwidth yang adil.
+## 🛠 Prasyarat
+Sebelum menginstal, pastikan router Anda terhubung ke internet untuk mengunduh paket berikut:
+* `php7-cgi` atau `php8-cgi`
+* `tc-full`
+* `screen`
 
 ---
 
-## 📥 Instalasi Satu Baris
+## 🚀 Cara Instalasi
 
-Buka terminal SSH Anda (Putty/Termius) dan jalankan perintah berikut:
+Hubungkan ke terminal router Anda (SSH) dan jalankan perintah sakti berikut:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/roisulx-coder/xdermlimiter/main/install-xderm.sh | sh
+wget -qO install.sh "[https://raw.githubusercontent.com/username/repo/main/install.sh](https://raw.githubusercontent.com/username/repo/main/install.sh)" && chmod +x install.sh && ./install.sh
